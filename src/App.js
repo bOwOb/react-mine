@@ -1,7 +1,6 @@
-import React, { useRef, useState } from "react";
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
-import board from "./board";
+import Board from './board';
 
 const OPTIONS = [
   {value:"beginner", name:"Beginner"},
@@ -11,10 +10,15 @@ const OPTIONS = [
 
 
 const SelectBox = (props) => {
+  const handleChange = (e) => {
+    console.log(e.target.value);
+  };
+
   return (
-    <select>
+    <select onChange={handleChange}>
       {props.options.map((option) => (
-        <option 
+        <option
+          key={option.value}
           value={option.value}
           defaultValue={props.defaultValue === option.value}
         >
@@ -27,29 +31,22 @@ const SelectBox = (props) => {
 
  const App = () => {
   return (
-    <dev className="App">
+    <dev className="App">      
         <div className="bar">
           <dev>
             mine            
           </dev>
-        </div>
+        </div>   
+        <Board /> 
         <div className="line">   
-        <SelectBox options={OPTIONS} defaultValue="easy">          
+        <SelectBox options={OPTIONS} defaultValue="Expert">          
         </SelectBox>
         &nbsp;
-        <button>선택</button>     
+        <button>시작</button>     
           <hr/>
         </div>
     </dev>
   )
 };
-
-// function App() {
-//   return (
-//         <div>
-//           <board />
-//         </div>
-//   )
-// };
 
 export default App;
