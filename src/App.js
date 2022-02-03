@@ -1,29 +1,55 @@
-import React, {map} from "react";
+import React, { useRef, useState } from "react";
 import logo from './logo.svg';
 import './App.css';
-import map from './map';
+import board from "./board";
 
- const App = () => {
+const OPTIONS = [
+  {value:"beginner", name:"Beginner"},
+  {value:"standard", name:"Standard"},
+  {value:"expert", name:"Expert"},
+]
 
-    return <map />;
-  // return (
-  //   <div className="App">
-  //     <header className="App-header">
-  //       <img src={logo} className="App-logo" alt="logo" />
-  //       <p>
-  //         Edit <code>src/App.js</code> and save to reload.
-  //       </p>
-  //       <a
-  //         className="App-link"
-  //         href="https://reactjs.org"
-  //         target="_blank"
-  //         rel="noopener noreferrer"
-  //       >
-  //         Learn React
-  //       </a>
-  //     </header>
-  //   </div>
-  // );
+
+const SelectBox = (props) => {
+  return (
+    <select>
+      {props.options.map((option) => (
+        <option 
+          value={option.value}
+          defaultValue={props.defaultValue === option.value}
+        >
+          {option.name}
+        </option>
+      ))}
+    </select>
+  );
 };
 
-export default map;
+ const App = () => {
+  return (
+    <dev className="App">
+        <div className="bar">
+          <dev>
+            mine            
+          </dev>
+        </div>
+        <div className="line">   
+        <SelectBox options={OPTIONS} defaultValue="easy">          
+        </SelectBox>
+        &nbsp;
+        <button>선택</button>     
+          <hr/>
+        </div>
+    </dev>
+  )
+};
+
+// function App() {
+//   return (
+//         <div>
+//           <board />
+//         </div>
+//   )
+// };
+
+export default App;

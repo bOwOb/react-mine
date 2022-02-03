@@ -2,6 +2,25 @@
   text-align: center;
 }
 
+body {
+  font-family:'Courier New', Courier, monospace'nanumsquare';
+}
+.bar{
+  background:rgb(77, 154, 255);
+  width: 100%;
+  display:flex;
+  color:white;
+  padding:20px;
+  font-weight: 600;
+  font-size:20px;
+}
+.line{
+  margin-top:30px;
+  text-align:left;
+  padding-left: 20px;
+  padding-right:1000px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
