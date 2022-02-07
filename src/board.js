@@ -25,7 +25,7 @@ class Board extends React.Component {
         <div className="board"></div>
         {this.Square(1)}{this.Square(2)}{this.Square(3)}{this.Square(4)}{this.Square(5)}{this.Square(6)}{this.Square(7)}{this.Square(8)}{this.Square(9)}{this.Square(10)}
         </div>
-      </div>
+        </div>
     );
   }
 }
